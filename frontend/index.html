@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学文章問題ジェネレーター</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>数学文章問題ジェネレーター</h1>
+            <p>学年と難易度を選択して、日本のカリキュラムに準拠した文章問題を生成します</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <div class="input-group">
+                    <label for="grade">学年を選択:</label>
+                    <select id="grade" name="grade">
+                        <option value="">学年を選択してください</option>
+                        <optgroup label="小学校">
+                            <option value="1">小学1年生</option>
+                            <option value="2">小学2年生</option>
+                            <option value="3">小学3年生</option>
+                            <option value="4">小学4年生</option>
+                            <option value="5">小学5年生</option>
+                            <option value="6">小学6年生</option>
+                        </optgroup>
+                        <optgroup label="中学校">
+                            <option value="7">中学1年生</option>
+                            <option value="8">中学2年生</option>
+                            <option value="9">中学3年生</option>
+                        </optgroup>
+                        <optgroup label="高等学校">
+                            <option value="10">高校1年生</option>
+                            <option value="11">高校2年生</option>
+                            <option value="12">高校3年生</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="difficulty">難易度を選択:</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="">難易度を選択してください</option>
+                        <option value="1">1 (易しい)</option>
+                        <option value="2">2 (やや易しい)</option>
+                        <option value="3">3 (普通)</option>
+                        <option value="4">4 (やや難しい)</option>
+                        <option value="5">5 (難しい)</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn btn-primary">問題を生成</button>
+                    <button id="printBtn" class="btn btn-secondary" disabled>印刷</button>
+                </div>
+            </section>
+
+            <section id="problemsSection" class="problems-section" style="display: none;">
+                <h2>生成された問題</h2>
+                <div id="problemsContainer" class="problems-container">
+                    <!-- 生成された問題がここに表示されます -->
+                </div>
+            </section>
+
+            <section id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>問題を生成中...</p>
+            </section>
+
+            <section id="errorSection" class="error-section" style="display: none;">
+                <div class="error-message">
+                    <h3>エラーが発生しました</h3>
+                    <p id="errorText"></p>
+                    <button id="retryBtn" class="btn btn-secondary">再試行</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="no-print">
+            <p>&copy; 2024 数学文章問題ジェネレーター</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
